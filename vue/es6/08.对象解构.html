@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    let book = {
+        title: "Vue无难事",
+        isbn:"9787121362217",
+        price: 98
+    }
+    let {title, isbn, price} = book;  //在对 对象数据类型进行解构
+    console.log(title);  //Vue无难事
+    console.log(isbn);  //9787121362217
+    console.log(price); //98*/
+    
+
+    //2
+    let book = {
+        title: "Vue无难事",
+        isbn:"9787121362217",
+        price: 98
+    }
+    let {title:bookTitle, isbn:bookIsbn} = book;
+    console.log(bookTitle);   //Vue无难事
+    console.log(bookIsbn);   //9787121362217*/
+
+    //3
+    let book = {
+        title: "Vue无难事",
+        isbn:"9787121362217",
+        price: 98,
+        category: {
+            id: 1,
+            name: "web前端"
+        }
+    }
+    //let {category: {name}} = book; //局部变量名为name
+    let {title, isbn, category:{name: category}} = book;
+    console.log(title);   //Vue无难事
+    console.log(isbn);    //9787121362217
+    console.log(category);  //web前端*/
+    //4
+    let arr = [1, 2, 3];
+    let [a, ...others] = arr;
+    let [...newArr] = arr;   //数组复制的另一种实现方式
+    console.log(a);  //1
+    console.log(others);  //[ 2, 3]
+    console.log(others[0])  //2
+    console.log(newArr);  //[1, 2, 3 ]*/ 
+
+
+    </script>
+</body>
+</html>

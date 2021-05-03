@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+//1
+    function createCar(color, doors){
+        return {
+            //有同名的参数，只写属性名即可
+            color,
+            doors
+        }
+    }
+    let car = createCar("red", 4);
+    console.log(car);
+//2
+    // var car = {
+    //     color: "red",
+    //     doors: 4,
+    //     showColor(){
+    //         console.log(this.color);  //this就近原则
+    //     }
+    // }
+
+//     car.showColor();
+//     console.log(car.showColor.name);
+// //3
+//     let suffix = "name";
+//     let person = {
+//         ["first" + suffix] : "san",
+//         ["last" + suffix]: "zhang",
+//         age: 20
+//     }
+//     console.log(person);  // { 'first name': 'san','last name':'zhang',age:20}
+    
+    
+    
+    </script>
+</body>
+</html>

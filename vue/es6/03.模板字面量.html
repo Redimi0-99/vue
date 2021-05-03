@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--注释快捷键 ctrl + /   或者 ctrl+k+c   取消注释ctrl+k+u   -->
+    <script type="text/javascript">
+        let num = 50
+        let str ='今天一共有'
+
+        console.log(str+'\n'+num+'个好朋友'+'\n'+'学到了')
+
+        console.log(`${str}
+        ${num}个好朋友
+        学到了`)
+
+
+    const fn = () => {
+        return '我是fn函数'
+    }    
+
+    let html = `我是模板字符串 ${fn()}`;
+    //${fn()}调用fn函数，此处会显示调用函数的返回结果
+    console.log(html)
+    
+    
+    </script>
+    
+</body>
+</html>

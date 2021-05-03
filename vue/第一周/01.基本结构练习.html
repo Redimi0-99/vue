@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--1. 导入Vue的包 -->
+    <script src="./vue-2.4.0.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--将来 new 的Vue实例，会控制这个 元素中的所有内容 -->
+        <!-- Vue 实例所控制的这个元素区域，就是我们的 V  -->
+        <p id="content">{{ msg }}</p>
+    </div>
+
+    <script>
+        // 2. 创建一个Vue的实例
+        // 当我们导入包后，在浏览器的内存中，就多了一个vue
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'helloworld~'
+            }
+        })
+        //[  ]  {  }
+        //$('#conten').text(data.msg)
+        $('#conten').text(data.msg)
+    </script>
+</body>
+</html>

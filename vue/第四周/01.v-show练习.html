@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--导包-->
+    <script src="./vue-2.4.0.js"></script>
+</head>
+<body>
+    <!-- v -->
+    <div id="app">
+        <input type="button" value="toggle" @click="toggle">
+
+        <h3 v-if="!flag">这是用v-if控制的元素</h3>
+        <h3 v-show="!flag">这是用v-show控制的元素</h3>
+    </div>
+
+    <!-- vm -->
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                flag: true 
+
+            },
+            methods:{
+                toggle(){
+                    this.flag = !this.flag
+                }
+            }
+        });
+    </script>
+</body>
+</html>
