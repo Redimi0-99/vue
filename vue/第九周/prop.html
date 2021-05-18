@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="en" />
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <post-list></post-list>
+        </div>
+        <!-- PostItem子接收 只需要在子组件的Vue实例中定义该属性并把值设为目标属性的数组即可-->
+        <!-- 线索:1.通过prop向子组件传递数据 2.包含关系 -->
+        <!-- prop 他是父组件向子组件传数据的 -->
+        <script>
+            Vue.component("PostItem", {
+                //声明props
+                props: ["postTitle"], //存在的意义就是替换了data，起作用的实际上是数组的变量
+                //postTitle就像data中定义的数据属性一样
+                //在该组件中可以像 "this.postTitle" 这样使用
+                //{{}}这是什么表达式？插值表达式 2.{{}}内可以写什么内容 1.变量 2.方法体(JavaScript)
+                //3.{{}}作用是什么？输出
+                template: "<h3>{{postTitle}}</h3>",
+            });
+            Vue.component("PostList", {
+                data() {
+                    return {
+                        title: "Vue.js无难事",
+                    };
+                },
+                //在字符串模块中可以直接使用PascalCase命名的组件名
+                //和camelCase命名的prop名
+                template: '<div><PostItem :postTitle="title"></PostItem></div>',
+            });
+            //PostItem和PostList 哪个是父组件？A PostItem B PostList a
+            //哪一个是 prop a title b postTitle b
+            new Vue({
+                el: "#app",
+            });
+        </script>
+    </body>
+</html>

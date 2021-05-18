@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="en" />
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <button-counter></button-counter> //组件
+        </div>
+
+        <script>
+            Vue.component('ButtonCounter', {
+                //过滤器filter、监听器watch、组件（模块化思想）component
+                data: function () {
+                    return {
+                        count: 0,
+                    };
+                },
+                template:
+                    '<button @click="count++">You click me{{count}}times.</button>', //缩写v-bind： v-on @
+            });
+            let MyComponent = Vue.extend({
+                template:
+                    '<button @click="count++">You click me{{count}}times.</button>',
+                data: function () {
+                    return {
+                        count: 0,
+                    };
+                },
+            });
+            Vue.component("ButtonCounter", MyComponent);
+
+            new Vue({
+                el: "#app",
+                data: {},
+            });
+        </script>
+    </body>
+</html>

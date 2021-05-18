@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="en" />
+        <script src="vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <button-counter></button-counter>
+            <!-- //组件 -->
+        </div>
+
+        <script>
+            let MyComponent = Vue.extend({
+                template:
+                    '<button @click="count++">You click me{{count}}times.</button>',
+                data: function () {
+                    return {
+                        count: 0,
+                    };
+                },
+            });
+
+            new Vue({
+                el: "#app",
+                components: {
+                    //filters methods components
+                    ButtonCounter: MyComponent,
+                },
+                // components:{
+                //     ButtonCounter:{
+                //         data: function() {
+                //             return{
+                //                 count:0
+                //             }
+                //         },
+                //         template:
+                //         `'<button @click="count++">You click me{{count}}times.</button>',
+                //     }
+                // }
+            });
+        </script>
+    </body>
+</html>
